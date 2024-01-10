@@ -1,8 +1,8 @@
 import React from 'react';
 // import type {PropsWithChildren} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
-import VideoPlayer from 'react-native-video-player';
+import {WebView} from 'react-native-webview';
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;
@@ -12,31 +12,21 @@ function App() {
   // const videoRef = useRef(null);
   return (
     <View style={styles.sectionContainer}>
-      <Text>toluence</Text>
-      {/* <VideoPlayer
-        video={{
-          uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-        }}
-        videoWidth={1600}
-        videoHeight={900}
-        thumbnail={{uri: 'https://i.picsum.photos/id/866/1600/900.jpg'}}
-      /> */}
-      <VideoPlayer
-        video={{
-          uri: 'https://www.youtube.com/embed/-Feev1ZK6L4',
-        }}
-        videoWidth={1600}
-        videoHeight={900}
-        thumbnail={{uri: 'https://i.picsum.photos/id/866/1600/900.jpg'}}
+      <WebView
+        source={{uri: 'https://vidsrc.xyz/embed/tv?tmdb=246'}}
+        style={styles.webView}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  webView: {
+    flex: 1,
+  },
+
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    flex: 1,
   },
   sectionTitle: {
     fontSize: 24,
